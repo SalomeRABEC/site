@@ -1,0 +1,162 @@
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+
+
+/* CSS pour le mode nuit */
+
+#modeNuitButton {
+    display: flex;
+    justify-content: flex-end; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: calc(120px + 3vh );
+    right: 5vw;
+    z-index: 100;
+}
+
+
+#modeNuitButton:hover {
+    background-color: #e2e2e2;
+}
+
+#luneIcon {
+    width: 30px;
+    height: 30px;
+}
+/* CSS pour le mode nuit */
+
+
+nav {
+    background-color: #333;
+    padding: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Conteneur du menu déroulant */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Liste déroulante cachée par défaut */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;              /* décale la liste sous le bouton */
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  min-width: 160px;
+  z-index: 10;
+}
+
+/* Chaque élément de la liste */
+.dropdown-content li {
+  text-align: left;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affiche la liste quand on survole "Hobby" */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.projets {
+    background-color: #9ed697;
+}
+
+
+.contact {
+    background-color: #ffd04e75;
+}
+
+.contact.nuit {
+    background-color: #000d2b;
+    color:white;
+}
+
+
+
+
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.contact-links a:hover {
+    transform: scale(1.1);
+}
+
+.contact-links img {
+    width: 40px;
+    height: 40px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+

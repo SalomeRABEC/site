@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>À propos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Latex -->
+    <script type="text/javascript" async
+    src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+      </script>
+      
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            flex: 1;
+
+            font-family: 'Merriweather', serif;
+
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+
+
+        }
+
+
+        nav,
+        footer {
+            flex-shrink: 0;
+        }
+
+
+        .parcours {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 40px;
+            background-color: #f4f4f4;
+            flex-grow: 1;
+        }
+
+
+
+        #photo {
+            position: absolute;
+            height: 30vh;
+            width: auto;
+            top: 20vh;
+            left: 10vw;
+
+
+            opacity: 0;
+            animation: slideDown 1s ease-out forwards;
+        }
+
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-10%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+        p {
+            text-align: justify;
+            flex: 1;
+            margin-left: 25vw;
+        }
+
+
+        .parcours.nuit {
+            background-color: #000d2b;
+            color: white;
+        }
+
+        #pythonlogo {
+                width: auto;
+                height:5vh;
+            }
+            #sagelogo {
+                width: auto;
+                height:8vh;
+            }
+
+        #isabellelogo {
+                width: auto;
+                height:8vh;
+            }
+
+        #htmlcsslogo {
+                width: auto;
+                height:8vh;
+            }
+
+            #latexlogo {
+                width: auto;
+                height:5vh;
+            }
+
+            .parcours img {
+  margin: 20px; /* Ajoute un espace de 10px autour de chaque image */
+}
+
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav>
+        <a href="about.html">Mon parcours</a>
+        <a href="projet.html">Projets</a>
+
+
+
+ <div class="dropdown">
+    <a href="#" class="dropbtn">Passions ▾</a>
+    <ul class="dropdown-content">
+      <li><a href="patisserie.html">Pâtisserie</a></li>
+      <li><a href="jardin.html">Jardinage</a></li>
+    </ul>
+  </div>
+          <a href="amenagements.html">Aménagements</a>
+
+                  <a href="contact.html">Contacts</a>
+    </nav>
+
+
+
+
+
+    <section id="parcours" class="section parcours">
+
+
+        <button id="modeNuitButton">
+            <img src="moon.svg" alt="Lune" id="luneIcon">
+
+        </button>
+
+
+        <img src="1.jpg" alt="Photo de profil" id="photo">
+
+        <p>Je m'appelle Salomé RABEC, je suis étudiante en première année de master de cryptographie à Rennes, après
+            avoir validé une licence de mathématiques.
+            <br>
+            J'aime apprendre à utiliser les logiciels informatiques et coder pour créer des outils qui m'aident mes proches et moi.
+            <br>
+            Je suis aussi passionnée par les langages et les symboles, ayant étudié les idéogrammes japonais pendant des années.
+            <br>
+            <br>
+            Je souhaite maintenant m'initier à la cryptographie dans le but de savoir protéger les données et de participer à la création d'outils sûrs et fiables pour tous.
+            <br>
+            <br>
+            <br>
+            <img src="python.svg"  alt="logo python"  id="pythonlogo">
+            <img src="sage.svg"  alt="logo sage"  id="sagelogo">
+            <img src="isabelle.svg"  alt="logo isabelle hol"  id="isabellelogo">
+            <img src="htmlcss.svg"  alt="logo html css"  id="htmlcsslogo">
+            <img src="latex.svg"  alt="logo latex"  id="latexlogo">
+
+
+        </p>
+
+
+    </section>
+
+
+
+
+    <section id="contact" class="section contact">
+        <h2><br><br>Contacts<br></h2>
+        <div class="contact-links">
+
+
+            <a href="mailto:salomerabec@proton.me">
+                <img src="mail.svg" alt="Email" id="mail">
+            </a>
+            <a href="https://www.linkedin.com/in/salom%C3%A9-rabec/" target="_blank">
+                <img src="link.svg"  alt="LinkedIn" id="link">
+            </a>
+            <a href="https://github.com/SalomeRABEC" target="_blank">
+                <img src="git.svg" alt="GitHub" id="git">
+
+
+        </div>
+        <br><br><br>
+    </section>
+
+    <footer>
+        &copy; <span id="year"></span> Salomé RABEC | Tous droits réservés
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
