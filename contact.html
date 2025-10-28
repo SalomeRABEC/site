@@ -98,6 +98,13 @@
         }
 
 
+@media (max-width: 600px) {
+  .main-container {
+    gap: 60px 20px; /* 40px vertical, 20px horizontal */
+  }
+}
+
+
         .contact-form {
             width: 50%;
             margin: 0 auto;
@@ -327,7 +334,7 @@ color: #ffffff;
     <div class="main-container">
         <div class="contact-form">
             <h2>Contactez-moi 🖋️</h2>
-            <form action="/send_email" method="POST">
+            <form id="contact-form">
 
                 <div class="form-group">
                     <label for="name">Nom</label>
@@ -450,6 +457,33 @@ color: #ffffff;
 
 
     <script src="script.js"></script>
+
+
+
+
+
+
+
+<!-- Script EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialisation
+  (function() {
+    emailjs.init("ntM7ihfexOQYpk0Gx"); // 🔹 remplace par ta clé publique EmailJS
+  })();
+
+  // Envoi du formulaire
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // empêche le rechargement de la page
+
+    emailjs.sendForm('service_m2n8fvj', 'template_dyup6li', this)
+      .then(function() {
+        alert('Message envoyé avec succès ✅');
+      }, function(error) {
+        alert('Erreur lors de l’envoi ❌: ' + JSON.stringify(error));
+      });
+  });
+</script>
 
 
 

@@ -40,6 +40,17 @@ body {
     width: 30px;
     height: 30px;
 }
+
+
+@media (max-width: 768px) {
+    #modeNuitButton {
+        top:300px;  /* laisse de la place pour le menu */
+        right: 30px;
+    }
+}
+
+
+
 /* CSS pour le mode nuit */
 
 
