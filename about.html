@@ -143,15 +143,20 @@
 <body>
 
 
+
     <nav>
-        <a href="about.html">Mon parcours</a>
+        <a href="index.html">Mon parcours</a>
         <a href="projet.html">Projets</a>
+  <div class="dropdown">
+    <button class="dropbtn"
+            id="btn-passions"
+            aria-haspopup="true"
+            aria-controls="menu-passions"
+            aria-expanded="false">
+      Passions ▾
+    </button>
 
-
-
- <div class="dropdown">
-    <a href="#" class="dropbtn">Passions ▾</a>
-    <ul class="dropdown-content">
+    <ul class="dropdown-content" id="menu-passions" hidden>
       <li><a href="patisserie.html">Pâtisserie</a></li>
       <li><a href="jardin.html">Jardinage</a></li>
     </ul>
@@ -165,11 +170,12 @@
 
 
 
+
     <section id="parcours" class="section parcours">
 
 
         <button id="modeNuitButton">
-            <img src="moon.svg" alt="Lune" id="luneIcon">
+            <img src="moon.svg" alt="Bouton mode nuit" id="luneIcon">
 
         </button>
 
@@ -212,10 +218,10 @@
                 <img src="mail.svg" alt="Email" id="mail">
             </a>
             <a href="https://www.linkedin.com/in/salom%C3%A9-rabec/" target="_blank">
-                <img src="link.svg"  alt="LinkedIn" id="link">
+                <img src="link.svg"  alt="Lien LinkedIn" id="link">
             </a>
             <a href="https://github.com/SalomeRABEC" target="_blank">
-                <img src="git.svg" alt="GitHub" id="git">
+                <img src="git.svg" alt="Lien GitHub" id="git">
 
 
         </div>

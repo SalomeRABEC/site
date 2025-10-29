@@ -147,7 +147,7 @@ h4 {
     margin-top: 30px;
     padding: 10px 20px;
     background-color: #9ed697;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     border-radius: 5px;
 }
@@ -316,12 +316,16 @@ section.connaissances h2 {
     <nav>
         <a href="index.html">Mon parcours</a>
         <a href="projet.html">Projets</a>
+  <div class="dropdown">
+    <button class="dropbtn"
+            id="btn-passions"
+            aria-haspopup="true"
+            aria-controls="menu-passions"
+            aria-expanded="false">
+      Passions ▾
+    </button>
 
-
-
- <div class="dropdown">
-    <a href="#" class="dropbtn">Passions ▾</a>
-    <ul class="dropdown-content">
+    <ul class="dropdown-content" id="menu-passions" hidden>
       <li><a href="patisserie.html">Pâtisserie</a></li>
       <li><a href="jardin.html">Jardinage</a></li>
     </ul>
@@ -335,10 +339,11 @@ section.connaissances h2 {
 
 
 
+
      
 <section id="lune" class="section lune">
     <button id="modeNuitButton">
-        <img src="moon.svg"  alt="Lune" id="luneIcon">
+        <img src="moon.svg"  alt="Bouton mode nuit" id="luneIcon">
     </button>
 </section>
 
@@ -351,8 +356,8 @@ section.connaissances h2 {
             <a href="cv.pdf" class="cv-button">Mon CV</a>
 
         </div>
-        <img src="8.png"  alt="Photo de profil"  id="profil-img">
-        <img src="bin4.gif"   alt="in" class='back' id="bin">
+        <img src="8.png"  alt="Dessin d'une femme blonde assise à son bureau avec son ordinateur, en train de taper sur son clavier"  id="profil-img">
+        <img src="bin4.gif"   alt="" class='back' id="bin">
     </section>
 
 
@@ -365,22 +370,22 @@ section.connaissances h2 {
 
 
  <figure>
- <iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018986/pic/embed" width="300" height="405"></iframe>   
+ <iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018986/pic/embed" width="300" height="405" title="Lien : Badge de M1 Cryptographie"></iframe>   
     <figcaption>M1 Cryptographie 🔐</figcaption>
   </figure>
 
    <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018951/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018951/pic/embed" width="300" height="405" title="Lien : Badge de Licence de Mathématiques"></iframe>
     <figcaption>Licence de Mathématiques 📊</figcaption>
   </figure>
 
      <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018997/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018997/pic/embed" width="300" height="405" title="Lien : Badge de bachelière scientifique"></iframe>
  <figcaption>Baccalauréat S ✏️</figcaption>
 </figure>
 
  <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018721/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018721/pic/embed" width="300" height="405" title="Lien : Badge de TOEIC de score 980"></iframe>
  <figcaption>Anglais : TOEIC 980/990 🇬🇧</figcaption>
 </figure>
 
@@ -395,23 +400,23 @@ section.connaissances h2 {
     <h2>Compétences pour le quotidien</h2>
   <div class="grid-connaissances2">
      <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018887/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018887/pic/embed" width="300" height="405" title="Lien : Badge Permis B"></iframe>
  <figcaption>Permis B 🚗</figcaption>
 </figure>
 <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018954/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018954/pic/embed" width="300" height="405" title="Lien : Badge de certificat de premiers secours"></iframe>
  <figcaption>PSC1 🩹</figcaption>
 </figure>
 <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1019002/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1019002/pic/embed" width="300" height="405" title="Lien : Badge de connaissances en japonais"></iframe>
  <figcaption>Japonais 🗻🗼</figcaption>
 </figure>
 <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018608/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018608/pic/embed" width="300" height="405" title="Lien : Badge de certification de connaissances en écologie de l'université de Poitiers"></iframe>
  <figcaption>Écologie 🌱</figcaption>
 </figure>
 <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/990565/pic/embed" width="300" height="405"></iframe>
+<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/990565/pic/embed" width="300" height="405" title="Lien : Badge d'étudiante au CNED"></iframe>
  <figcaption>Autonomie 📚</figcaption>
 </figure>
 
@@ -500,11 +505,11 @@ section.connaissances h2 {
             <a href="mailto:salomerabec@proton.me">
                 <img src="mail.svg"  alt="Email" id="mail">
             </a>
-            <a href="https://www.linkedin.com/in/salom%C3%A9-rabec/" target="_blank">
-                <img src="link.svg"  alt="LinkedIn" id="link">
+            <a href="https://www.linkedin.com/in/salomerabec/" target="_blank">
+                <img src="link.svg"  alt="lien LinkedIn" id="link">
             </a>
             <a href="https://github.com/SalomeRABEC" target="_blank">
-                <img src="git.svg" alt="GitHub" id="git">
+                <img src="git.svg" alt="Lien GitHub" id="git">
 
 
         </div>
@@ -521,7 +526,7 @@ section.connaissances h2 {
 
     <script src="script.js"></script>
 
-
+<script src="nav.js">    </script>
 
 
 </body>
