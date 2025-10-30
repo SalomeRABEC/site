@@ -409,19 +409,19 @@ Pour les éléments iframe, j'ai ajouté un élément title="" car le alt ne peu
         
             <!-- Grille des projets -->
             <div id="projectsGrid" class="grid">
-                <div class="project" data-tags="web">
+                <div class="project" data-tags="web" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
                     <h3>Projet 1</h3>
                     <p>Un projet Web intéressant.</p>
                 </div>
-                <div class="project" data-tags="crypto">
+                <div class="project" data-tags="crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
                     <h3>Projet 2</h3>
                     <p>Un projet sur la cryptographie.</p>
                 </div>
-                <div class="project" data-tags="ia">
+                <div class="project" data-tags="ia" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
                     <h3>Projet 3</h3>
                     <p>Un projet basé sur l'IA.</p>
                 </div>
-                <div class="project" data-tags="web crypto">
+                <div class="project" data-tags="web crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
                     <h3>Projet 4</h3>
                     <p>Un projet Web & Crypto.</p>
                 </div>
