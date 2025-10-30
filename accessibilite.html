@@ -32,6 +32,11 @@
   // Supprime le style temporaire une fois que tout est chargé
   window.addEventListener('DOMContentLoaded', () => style.remove());
 })();
+
+window.addEventListener('load', () => {
+  document.activeElement.blur(); // enlève tout focus initial
+});
+
 </script>
 
 
@@ -96,10 +101,7 @@ a.nuit {
 
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #004b99;
-}
+
 
 
 @keyframes slideDown {
@@ -187,12 +189,17 @@ transform: scale(1.05);
 color: #ffffff;
 }
 
-        #htmlcsslogo {
-                width: auto;
-                height:8vh;
-            }
+#htmlcsslogo,#jslogo {
+  width: auto;
+  height:8vh;
+  }
 
+.lang {
+display: flex;
+flex-wrap: wrap;
+gap :10px;
 
+}
 
 
 
@@ -250,9 +257,10 @@ color: #ffffff;
   transform: scale(1.05);
 }
 
-#jslogo{
-    width:4vW;
+button:focus {
+  outline: none;
 }
+
 
 </style>
 
@@ -271,10 +279,25 @@ color: #ffffff;
 
     <nav>
         <a href="index.html">Mon parcours</a>
-        <a href="projet.html">Projets</a>
+
+  <div class="dropdown">
+    <button class="dropbtn"
+            id="btn-projets"
+            aria-haspopup="true"
+            aria-controls="menu-projets"
+            aria-expanded="false">
+      Projets ▾
+    </button>
+
+    <ul class="dropdown-content" id="menu-projets" hidden>
+      <li><a href="accessibilite.html">Accessibilité du site</a></li>
+    </ul>
+  </div>
   <div class="dropdown">
     <button class="dropbtn"
             id="btn-passions"
+            type="button"
+            tabindex="-1"
             aria-haspopup="true"
             aria-controls="menu-passions"
             aria-expanded="false">
@@ -294,8 +317,6 @@ color: #ffffff;
 
 
 
-
-
 <section id="lune" class="section lune">
     <button id="modeNuitButton">
         <img src="moon.svg"  alt="Bouton mode nuit" id="luneIcon">
@@ -308,15 +329,18 @@ color: #ffffff;
 
     <h2>Accessibilité numérique du site</h2>
 
-Langages utilisés :  <img src="htmlcss.svg"  alt="Logo HTML CSS"  id="htmlcsslogo">
+Langages utilisés :  
+
+<section id="lang" class="section lang">
+<img src="htmlcss.svg"  alt="Logo HTML CSS"  id="htmlcsslogo">
 <img src="js.svg"  alt="Logo Javascript"  id="jslogo">
+</section>
 
 
-
-<br>
+<br><br><br>
 <p>Une des missions du service public est de rendre ses productions accessibles à tous. <br>
     Lorsque cela concerne le numérique, il est important de respecter certaines règles dans la création de documents pour faciliter leur lecture par les technologies d'assistance, utilisées notamment par les personnes malvoyantes ou ayant un handicap moteur.<br>
-Le gouvernement français a pour cela établi une <a href="https://accessibilite.numerique.gouv.fr/">liste de critères</a> à respecter nommée RGAA.
+Le gouvernement français a pour cela établi une <a href="https://accessibilite.numerique.gouv.fr/" role="button"  tabindex="0">liste de critères</a> à respecter nommée RGAA.
 </p>
 
 <br>
@@ -357,7 +381,7 @@ Pour les éléments iframe, j'ai ajouté un élément title="" car le alt ne peu
 
 <h3>Couleurs et contrastes</h3>
 
-<p>Le texte et le fond doivent avoir un contraste suffisant dans leurs couleurs pour être lisibles par tous. Pour cela j'ai utilisé l'outil Lighthouse de Google Chrome pour faire un diagnostic de mon site, et j'en ai profité pour changer quelques couleurs (notamment les liens hypertextes):</p>
+<p>Le texte et le fond doivent avoir un contraste suffisant dans leurs couleurs pour être lisibles par tous. Pour cela j'ai utilisé l'outil Lighthouse de Google Chrome pour faire un diagnostic de mon site, et j'en ai profité pour changer quelques couleurs :</p>
 <br>
 
 <div class="contraste">
@@ -375,6 +399,10 @@ Pour les éléments iframe, j'ai ajouté un élément title="" car le alt ne peu
 <div class="aria">
   <img src="./accessibilite/aria.png" alt="Liste des éléments ARIA existant"  onclick="openLightbox(this)">
 </div>
+
+<br><br><br>
+<p>Au final, en appliquant ces 5 points principaux et en prenant le réflexe de les utiliser dans chaque projet, j'espère pouvoir rendre mes sites et programmes plus accueillants pour tous. C'est à la fois une chose qui me tient à coeur personnellement, une exigence dans le service public et un gage de qualité.</p>
+
 
 </section>
 

@@ -32,6 +32,11 @@
   // Supprime le style temporaire une fois que tout est chargé
   window.addEventListener('DOMContentLoaded', () => style.remove());
 })();
+
+window.addEventListener('load', () => {
+  document.activeElement.blur(); // enlève tout focus initial
+});
+
 </script>
 
 
@@ -308,6 +313,10 @@ color: #ffffff;
 }
 
 
+button:focus {
+  outline: none;
+}
+
 </style>
 
 </head>
@@ -322,12 +331,28 @@ color: #ffffff;
 
 
 
+
     <nav>
         <a href="index.html">Mon parcours</a>
-        <a href="projet.html">Projets</a>
+
+  <div class="dropdown">
+    <button class="dropbtn"
+            id="btn-projets"
+            aria-haspopup="true"
+            aria-controls="menu-projets"
+            aria-expanded="false">
+      Projets ▾
+    </button>
+
+    <ul class="dropdown-content" id="menu-projets" hidden>
+      <li><a href="accessibilite.html">Accessibilité du site</a></li>
+    </ul>
+  </div>
   <div class="dropdown">
     <button class="dropbtn"
             id="btn-passions"
+            type="button"
+            tabindex="-1"
             aria-haspopup="true"
             aria-controls="menu-passions"
             aria-expanded="false">
@@ -343,8 +368,6 @@ color: #ffffff;
 
                   <a href="contact.html">Contacts</a>
     </nav>
-
-
 
 
 

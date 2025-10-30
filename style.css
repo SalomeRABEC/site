@@ -1,4 +1,9 @@
 
+.dropdown-content {
+  display: none !important;
+}
+
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
@@ -14,7 +19,7 @@ body {
 }
 
 body :focus{
-  outline: 3px solid #000d2b;
+  outline: 3px solid #000000;
   outline-offset: 4px;
 }
 
@@ -79,6 +84,7 @@ nav a {
 
 nav a:hover,  nav button.dropbtn:hover  {
     background-color: #555;
+    color:white;
 }
 
 /* Conteneur du menu déroulant */
@@ -226,6 +232,11 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block !important;
 }
 
 

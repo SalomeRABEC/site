@@ -31,6 +31,11 @@
   // Supprime le style temporaire une fois que tout est chargé
   window.addEventListener('DOMContentLoaded', () => style.remove());
 })();
+
+window.addEventListener('load', () => {
+  document.activeElement.blur(); // enlève tout focus initial
+});
+
 </script>
 
 
@@ -233,6 +238,10 @@ padding: 15px;
   margin: 0;                 /* retire les marges par défaut */
 }
 
+button:focus {
+  outline: none;
+}
+
 
 
 </style>
@@ -248,15 +257,33 @@ padding: 15px;
 
 
 
+
     <nav>
         <a href="index.html">Mon parcours</a>
-        <a href="projet.html">Projets</a>
+
+  <div class="dropdown">
+    <button class="dropbtn"
+            id="btn-projets"
+            aria-haspopup="true"
+            aria-controls="menu-projets"
+            aria-expanded="false">
+      Projets ▾
+    </button>
+
+    <ul class="dropdown-content" id="menu-projets" hidden>
+      <li><a href="accessibilite.html">Accessibilité du site</a></li>
+    </ul>
+  </div>
   <div class="dropdown">
     <button class="dropbtn"
             id="btn-passions"
+            type="button"
+            tabindex="-1"
             aria-haspopup="true"
             aria-controls="menu-passions"
-            aria-expanded="false">
+            aria-expanded="false"
+            >
+            
       Passions ▾
     </button>
 
@@ -269,7 +296,6 @@ padding: 15px;
 
                   <a href="contact.html">Contacts</a>
     </nav>
-
 
 
      

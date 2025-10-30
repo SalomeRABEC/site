@@ -53,3 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+window.addEventListener("load", () => {
+  // Enlève tout focus automatique au démarrage
+  if (document.activeElement) {
+    document.activeElement.blur();
+  }
+
+  // Optionnel : empêche le focus visuel sur le bouton au tout début
+  const btn = document.getElementById("btn-passions");
+  if (btn) {
+    btn.blur();
+  }
+});
