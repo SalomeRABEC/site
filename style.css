@@ -23,6 +23,9 @@ body :focus{
   outline-offset: 4px;
 }
 
+body.nuit :focus{
+outline: 3px solid #81bd93;  
+}
 
 
 
