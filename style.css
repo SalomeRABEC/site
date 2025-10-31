@@ -243,3 +243,18 @@ footer {
 }
 
 
+
+.project {
+  display: block;              /* rend le lien cliquable sur tout le bloc */
+  background-color: #f8f8f8;   /* fond clair */
+  padding: 20px;
+  border-radius: 10px;
+  text-decoration: none;       /* supprime le soulignement */
+  color: inherit;              /* garde la couleur du texte */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;       /* reste propre au survol */
+}
