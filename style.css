@@ -252,6 +252,12 @@ footer {
   text-decoration: none;       /* supprime le soulignement */
   color: inherit;              /* garde la couleur du texte */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 200px;
+height: 150px;
+border: 1px solid #ddd;
+padding: 15px;
+text-align: center;
+transition: transform 0.3s;
 }
 
 .project:hover {
