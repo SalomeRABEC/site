@@ -44,20 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn.contains(e.target) && !menu.contains(e.target)) closeMenu();
   });
 
-  // fermer si focus sort du menu (tabbing)
-  document.addEventListener('focusin', () => {
-    const active = document.activeElement;
-    if (btn.getAttribute('aria-expanded') === 'true' && !menu.contains(active) && active !== btn) {
-      closeMenu();
-    }
-  });
+// Fermer si clic en dehors du menu
+document.addEventListener('click', (e) => {
+  if (!btn.contains(e.target) && !menu.contains(e.target)) {
+    closeMenu();
+  }
 });
+
 
 window.addEventListener("load", () => {
   // Enlève tout focus automatique au démarrage
   if (document.activeElement) {
     document.activeElement.blur();
   }
+}
 
   // Optionnel : empêche le focus visuel sur le bouton au tout début
   const btn = document.getElementById("btn-passions");
