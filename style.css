@@ -213,12 +213,14 @@ nav button.dropbtn {
     display: flex;
     justify-content: center;
     gap: 50px;
+      align-items: center;
     margin-top: 50px;
 }
 
 .contact-links a {
     text-decoration: none;
     transition: transform 0.3s;
+      display: inline-block;
 }
 
 .contact-links a:hover {
