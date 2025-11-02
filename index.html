@@ -2,560 +2,177 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salomé RABEC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-
-
-
-
-
-
-<script>
-(function() {
-  const isNuit = localStorage.getItem('modeNuit') === 'true';
-
-  if (isNuit) {
-    document.documentElement.classList.add('nuit');
-    document.body?.classList?.add('nuit');
-  }
-
-  // ✅ Petit style temporaire (juste pendant le chargement)
-  const style = document.createElement('style');
-  style.innerHTML = `
-    html, body {
-      background-color: ${isNuit ? '#000d2b' : '#fff'} !important;
-      color: ${isNuit ? 'white' : 'black'} !important;
-      transition: none !important; /* pas d’animation au chargement */
-    }
-  `;
-  document.head.appendChild(style);
-
-  // Supprime le style temporaire une fois que tout est chargé
-  window.addEventListener('DOMContentLoaded', () => style.remove());
-})();
-
-window.addEventListener('load', () => {
-  document.activeElement.blur(); // enlève tout focus initial
-});
-
-</script>
-
-
-
-    <link rel="stylesheet" href="style.css">
-
-
-    
-<style>
-
-    body.nuit {
-  background-color: #000d2b;
-  color: white;
-}
-
-.profil {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-     flex-direction: row; 
-    position: relative;
-    height:95vh;
-    margin-left:5vh; 
-    margin-right:5vh; 
-}
-
-
-.profil.nuit {
-    background-color: #000d2b;
-    color: white;
-}
-
-
-.profil-text {
-    text-align: left;
-    margin-right: 0.5vw;
-    padding-right: 10vh;
-}
-
-h1 {
-    font-size: 4vh;
-}
-.profil h2 {
-    font-size: 3vh;
-}
-
-
-
-#bin {
-    z-index: 1;
-    width: 40vw;
-    height:80vh;
-    border-radius: 10px;
-    top: 0; 
-    right: 10vw; 
-    position: absolute;
-}
-#profil-img {
-    z-index: 2;
-    width: 50vw;
-    height: auto;
-    border-radius: 1vw;
-    right: 8vw; 
-    opacity: 0;
-    animation: slideDown 1s ease-out forwards;
-
-
-}
-
-
-
-
-
-
-@media (max-width: 768px) {
-  #profil {
-    flex-direction: column; /* image passe sous le texte */
-    text-align: center;     /* centre le contenu */
-  }
-
-  #profil-img {
-    order: 2;               /* force l’image à venir APRÈS le texte */
-    width: 80vw;           /* plus petit sur mobile */
-    margin-top: 20px;
-  }
-
-  .profil-text {
-    order: 1;               /* le texte vient en premier */
-  }
-}
-
-
-
-
-
-@keyframes slideDown {
-    0% {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
-
-
-
-.cv-button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #9ed697;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.cv-button:hover {
-    background-color: #5f815a;
-}
-
-.cv-button.nuit {
-    background-color: #273672;
-    color: white;
-
-}
-.cv-button.nuit:hover {
-    background-color: #6171bb;
-}
-
-
-
-
-.description {
-
-    display: flex;
-    align-items: center;
-     flex-direction: row; 
-    position: relative;
-    height:70vh;
-     justify-content: flex-start; /* aligne le contenu à gauche */
-  padding-left: 4vw; 
-   line-height: 1.6;  
-   white-space: nowrap;
-}
-
-@media (max-width: 1600px) {
-  .description {
-    white-space: normal; /* le texte revient à la ligne sur mobile */
-  }
-}
-
-
-.description p {
-text-align: left;
-font-size: 2.4vh;
-font-style: italic;
-margin-bottom: 10vh;
-
-}
-
-.description p::first-letter {
-  font-size: 6vh;        /* taille beaucoup plus grande */
-  float: left;            /* la lettrine flotte à gauche */
-  line-height: 1;         /* ajuster si nécessaire */
-  margin-right: 0.1em;    /* espace entre la lettrine et le texte */
-}
-
-
-
-/* Style du champ de recherche et du menu déroulant */
-#searchBar, #filterTags {
-width: 100%;
-max-width: 300px;
-padding: 10px;
-margin: 10px;
-font-size: 16px;
-border: 1px solid #ccc;
-border-radius: 5px;
-}
-
-/* Style de la grille des projets */
-.grid {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-margin-top: 20px;
-  justify-items: stretch; /* étend les projets uniformément */
-  align-items: stretch; 
-}
-
-
-
-
-.project.nuit {
-    background-color: #000e2c;
-    border: 1px solid #ddd;
-    }
-
-h3 {
-    margin-bottom: 4vh; /* Ajuste cette valeur pour avoir plus ou moins d'espace sous le titre */
-}
-
-
-
-
-.projets.nuit{
-background-color: #000d2b;
-color: #ffffff;
-
-}
-
-.project:hover {
-transform: scale(1.05);
-}
-
-.projets.nuit h2 {
-color: #ffffff;
-}
-
-
-.connaissances {
-  padding-left: 2vw ;
-
-}
-
-section.connaissances h2 {
-  text-align: left;
-  /*margin: 20px; /* espace entre le titre et la grille */
-
-  margin-left: 2vw;
-  font-size: 1.5em;
-  margin-bottom: 60px;  
-  margin-top: 100px;
-}
-
-
-/* Supprime le margin par défaut des iframes */
-.grid-connaissances iframe,
-.grid-connaissances2 iframe {
-  margin-left: 0px;
-  padding-left: 0px;
-  max-height: 150px; /* hauteur maximale */
-  width: 180px    ;  /* largeur proportionnelle */
-  object-fit: contain; /* ajuste l'image sans la déformer */
-  border-radius: 100%; /* optionnel pour arrondir */
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block;
-}
-
-.grid-connaissances,
-.grid-connaissances2 {
-
-  display:flex;
-  text-align: start;
-  grid-template-columns: repeat(auto-fit, minmax(10px,auto));
-  flex-wrap: wrap;    
-  gap:0px;            /* espace entre les badges */
-  justify-content: flex-start; /* aligne bien à gauche */
-  align-items: flex-start;
-  margin: 0;  
-}
-
-
-.grid-connaissances figure, .grid-connaissances2 figure {
-  text-align: center;
-  flex-direction: column;
-    display: inline-block;    /* les figures restent à la suite les unes des autres */
-  vertical-align: top;
-}
-
-
-
-.grid-connaissances figcaption, .grid-connaissances2 figcaption {
-  margin-top: 8px;
-  text-align: center;
-}
-
-.description span:nth-child(0) { margin-left: 0em; }
-
-.description span:nth-child(2) { margin-left: 2em; }
-.description span:nth-child(3) { margin-left: 8em; }
-.description span:nth-child(4) { margin-left: 12em; }
-
-.valeurs {
- font-style: normal;
- text-align: justify;
- display: flex;
-justify-content: center;
-font-size: 2vh;
-}
-
-
-/*.grid-connaissances > *, .grid-connaissances2 > * {
-     outline: 1px dashed rgba(0, 0, 0, 0.3); /* ou une couleur flashy */
-
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé RABEC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <script src="nuit.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
 
 </head>
 
 <body>
 
 
-    <div id="loader">
-        <div class="spinner"></div> 
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+
+  <nav>
+    <a href="index.html">Mon parcours</a>
+
+    <div class="dropdown">
+      <button class="dropbtn" id="btn-projets" aria-haspopup="true" aria-controls="menu-projets" aria-expanded="false">
+        Projets ▾
+      </button>
+
+      <ul class="dropdown-content" id="menu-projets" hidden>
+        <li><a href="accessibilite.html">Accessibilité du site</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" id="btn-passions" type="button" aria-haspopup="true" aria-controls="menu-passions"
+        aria-expanded="false">
+        Passions ▾
+      </button>
+
+      <ul class="dropdown-content" id="menu-passions" hidden>
+        <li><a href="patisserie.html">Pâtisserie</a></li>
+        <li><a href="jardin.html">Jardinage</a></li>
+      </ul>
+    </div>
+    <a href="amenagements.html">Aménagements</a>
+
+    <a href="contact.html">Contacts</a>
+  </nav>
+
+
+
+
+
+
+  <section id="lune" class="section lune">
+    <button id="modeNuitButton">
+      <img src="moon.svg" alt="Bouton mode nuit" id="luneIcon">
+    </button>
+  </section>
+
+
+
+  <section id="profil" class="section profil">
+
+    <div class="profil-text">
+      <h1>Salomé RABEC<br></h1>
+      <h2>Je construis des ponts entre mathématiques, <br>numérique et service public</h2>
+      <a href="cv.pdf" class="cv-button">Mon CV</a>
+
+    </div>
+    <img src="8.png"
+      alt="Dessin d'une femme blonde assise à son bureau avec son ordinateur, en train de taper sur son clavier"
+      id="profil-img">
+    <img src="bin4.gif" alt="" class='back' id="bin">
+  </section>
+
+  <section id="description" class="section description">
+    <p><span>“Bonjour, je m’appelle Salomé.<br></span>
+      <span>Mon parcours scientifique, tourné vers les mathématiques, le numérique et l'administration publique, m’a
+        appris à allier rigueur et sens du concret.<br></span>
+      <span>J’aime transformer la théorie en applications utiles et compréhensibles par tous.<br></span>
+      <span>Ce qui me motive, c’est de mettre mes compétences techniques au service d’un service public humain.
+        ”<br><br><br></span>
+      <span class="valeurs">🧮 Rigueur – 🔍 Esprit d’analyse – 🌍 Sens du service public</span>
+    </p>
+  </section>
+
+
+
+
+  <section class="connaissances">
+    <h2>Connaissances</h2>
+    <div class="grid-connaissances">
+
+
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018986/pic/embed"
+          width="300" height="405" title="Lien : Badge de M1 Cryptographie"></iframe>
+        <figcaption>M1 Cryptographie 🔐</figcaption>
+      </figure>
+
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018951/pic/embed"
+          width="300" height="405" title="Lien : Badge de Licence de Mathématiques"></iframe>
+        <figcaption>Licence de Mathématiques 📊</figcaption>
+      </figure>
+
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1029165/pic/embed"
+          width="200" height="270" title="Lien : Badge de Licence d'Administration Publique"></iframe>
+        <figcaption>Licence Administration Publique 🪙</figcaption>
+      </figure>
+
+
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018997/pic/embed"
+          width="300" height="405" title="Lien : Badge de bachelière scientifique"></iframe>
+        <figcaption>Baccalauréat S ✏️</figcaption>
+      </figure>
+
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018721/pic/embed"
+          width="300" height="405" title="Lien : Badge de TOEIC de score 980"></iframe>
+        <figcaption>Anglais : TOEIC 980/990 🇬🇧</figcaption>
+      </figure>
+
+
     </div>
 
+    <br>
+    <br>
 
-
-
-
-    <nav>
-        <a href="index.html">Mon parcours</a>
-
-  <div class="dropdown">
-    <button class="dropbtn"
-            id="btn-projets"
-            aria-haspopup="true"
-            aria-controls="menu-projets"
-            aria-expanded="false">
-      Projets ▾
-    </button>
-
-    <ul class="dropdown-content" id="menu-projets" hidden>
-      <li><a href="accessibilite.html">Accessibilité du site</a></li>
-    </ul>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn"
-            id="btn-passions"
-            type="button"
-            aria-haspopup="true"
-            aria-controls="menu-passions"
-            aria-expanded="false">
-      Passions ▾
-    </button>
-
-    <ul class="dropdown-content" id="menu-passions" hidden>
-      <li><a href="patisserie.html">Pâtisserie</a></li>
-      <li><a href="jardin.html">Jardinage</a></li>
-    </ul>
-  </div>
-          <a href="amenagements.html">Aménagements</a>
-
-                  <a href="contact.html">Contacts</a>
-    </nav>
-
-
-
-
-
-     
-<section id="lune" class="section lune">
-    <button id="modeNuitButton">
-        <img src="moon.svg"  alt="Bouton mode nuit" id="luneIcon">
-    </button>
-</section>
-
-
-
-    <section id="profil" class="section profil">
-
-        <div class="profil-text">
-            <h1>Salomé RABEC<br></h1><h2>Je construis des ponts entre mathématiques, <br>numérique et service public</h2>
-            <a href="cv.pdf" class="cv-button">Mon CV</a>
-
-        </div>
-        <img src="8.png"  alt="Dessin d'une femme blonde assise à son bureau avec son ordinateur, en train de taper sur son clavier"  id="profil-img">
-        <img src="bin4.gif"   alt="" class='back' id="bin">
-    </section>
-
-    <section id="description" class="section description">
-<p><span>“Bonjour, je m’appelle Salomé.<br></span>
-<span>Mon parcours scientifique, tourné vers les mathématiques, le numérique et l'administration publique, m’a appris à allier rigueur et sens du concret.<br></span>
-<span>J’aime transformer la théorie en applications utiles et compréhensibles par tous.<br></span>
-<span>Ce qui me motive, c’est de mettre mes compétences techniques au service d’un service public humain. ”<br><br><br></span>
-<span class="valeurs">🧮 Rigueur – 🔍 Esprit d’analyse – 🌍 Sens du service public</span>
-</p>
-    </section>
-
-
-
-
-    <section class="connaissances">
-  <h2>Connaissances</h2>
-  <div class="grid-connaissances">
-
-
- <figure>
- <iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018986/pic/embed" width="300" height="405" title="Lien : Badge de M1 Cryptographie"></iframe>   
-    <figcaption>M1 Cryptographie 🔐</figcaption>
-  </figure>
-
-   <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018951/pic/embed" width="300" height="405" title="Lien : Badge de Licence de Mathématiques"></iframe>
-    <figcaption>Licence de Mathématiques 📊</figcaption>
-  </figure>
-
-<figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1029165/pic/embed" width="200" height="270" title="Lien : Badge de Licence d'Administration Publique"></iframe>
-<figcaption>Licence Administration Publique 🪙</figcaption>
-</figure>
-
-  
-     <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018997/pic/embed" width="300" height="405" title="Lien : Badge de bachelière scientifique"></iframe>
- <figcaption>Baccalauréat S ✏️</figcaption>
-</figure>
-
- <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018721/pic/embed" width="300" height="405" title="Lien : Badge de TOEIC de score 980"></iframe>
- <figcaption>Anglais : TOEIC 980/990 🇬🇧</figcaption>
-</figure>
-
-
-</div>
-
-<br>
-<br>
-
-</section>
-     <section class="connaissances">
+  </section>
+  <section class="connaissances">
     <h2>Compétences pour le quotidien</h2>
-  <div class="grid-connaissances2">
-     <figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018887/pic/embed" width="300" height="405" title="Lien : Badge Permis B"></iframe>
- <figcaption>Permis B 🚗</figcaption>
-</figure>
-<figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018954/pic/embed" width="300" height="405" title="Lien : Badge de certificat de premiers secours"></iframe>
- <figcaption>PSC1 🩹</figcaption>
-</figure>
-<figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1019002/pic/embed" width="300" height="405" title="Lien : Badge de connaissances en japonais"></iframe>
- <figcaption>Japonais 🗻🗼</figcaption>
-</figure>
-<figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018608/pic/embed" width="300" height="405" title="Lien : Badge de certification de connaissances en écologie de l'université de Poitiers"></iframe>
- <figcaption>Écologie 🌱</figcaption>
-</figure>
-<figure>
-<iframe  frameborder="0"  scrolling="no" src="https://openbadgepassport.com/app/badge/info/990565/pic/embed" width="300" height="405" title="Lien : Badge d'étudiante au CNED"></iframe>
- <figcaption>Autonomie 📚</figcaption>
-</figure>
+    <div class="grid-connaissances2">
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018887/pic/embed"
+          width="300" height="405" title="Lien : Badge Permis B"></iframe>
+        <figcaption>Permis B 🚗</figcaption>
+      </figure>
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018954/pic/embed"
+          width="300" height="405" title="Lien : Badge de certificat de premiers secours"></iframe>
+        <figcaption>PSC1 🩹</figcaption>
+      </figure>
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1019002/pic/embed"
+          width="300" height="405" title="Lien : Badge de connaissances en japonais"></iframe>
+        <figcaption>Japonais 🗻🗼</figcaption>
+      </figure>
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/1018608/pic/embed"
+          width="300" height="405"
+          title="Lien : Badge de certification de connaissances en écologie de l'université de Poitiers"></iframe>
+        <figcaption>Écologie 🌱</figcaption>
+      </figure>
+      <figure>
+        <iframe frameborder="0" scrolling="no" src="https://openbadgepassport.com/app/badge/info/990565/pic/embed"
+          width="300" height="405" title="Lien : Badge d'étudiante au CNED"></iframe>
+        <figcaption>Autonomie 📚</figcaption>
+      </figure>
 
 
-</div>
-            
-<br>
-<br>
-<br>
-<br>
+    </div>
 
-</section>
+    <br>
+    <br>
+    <br>
+    <br>
 
-
-
-
-
-
-
-
-    <section id="projets" class="section projets">
-
-
-                  
-
-        <h2><br><br>
-            Mes Projets
-        <br><br></h2>
-        
-            
-            <!-- Barre de recherche -->
-            <input type="text" id="searchBar" placeholder="Rechercher un projet..." />
-        
-            <!-- Menu déroulant pour filtrer par tags -->
-            <select id="filterTags" aria-label="Filtrer par catégorie">
-                <option value="all">Tous</option>
-                <option value="web">Web</option>
-                <option value="crypto">Cryptographie</option>
-                <option value="ia">Intelligence Artificielle</option>
-            </select>
-        
-            <!-- Grille des projets -->
-            <div id="projectsGrid" class="grid">
-              <a href="accessibilite.html" class="project" data-tags="web" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-
-                    <h3>Accessibilité du site</h3>
-                    <p>Un projet Web basé sur le RGAA ♿</p>
-
-                    </a>
-                  
-                <div class="project" data-tags="crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 2</h3>
-                    <p>Un projet sur la cryptographie.</p>
-                </div>
-                <div class="project" data-tags="ia" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 3</h3>
-                    <p>Un projet basé sur l'IA.</p>
-                </div>
-                <div class="project" data-tags="web crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 4</h3>
-                    <p>Un projet Web & Crypto.</p>
-                </div>
-            </div>
-            <br><br><br>
-        </section>
-        
-    </section>
+  </section>
 
 
 
@@ -564,44 +181,92 @@ font-size: 2vh;
 
 
 
+  <section id="projets" class="section projets">
+
+
+
+
+    <h2><br><br>
+      Mes Projets
+      <br><br>
+    </h2>
+
+
+    <!-- Barre de recherche -->
+    <input type="text" id="searchBar" placeholder="Rechercher un projet..." />
+
+    <!-- Menu déroulant pour filtrer par tags -->
+    <select id="filterTags" aria-label="Filtrer par catégorie">
+      <option value="all">Tous</option>
+      <option value="web">Web</option>
+      <option value="crypto">Cryptographie</option>
+      <option value="ia">Intelligence Artificielle</option>
+    </select>
+
+    <!-- Grille des projets -->
+    <div id="projectsGrid" class="grid">
+      <a href="accessibilite.html" class="project" data-tags="web" role="button" tabindex="0"
+        onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+
+        <h3>Accessibilité du site</h3>
+        <p>Un projet Web basé sur le RGAA ♿</p>
+
+      </a>
+
+      <div class="project" data-tags="crypto" role="button" tabindex="0"
+        onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+        <h3>Projet 2</h3>
+        <p>Un projet sur la cryptographie.</p>
+      </div>
+      <div class="project" data-tags="ia" role="button" tabindex="0"
+        onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+        <h3>Projet 3</h3>
+        <p>Un projet basé sur l'IA.</p>
+      </div>
+      <div class="project" data-tags="web crypto" role="button" tabindex="0"
+        onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+        <h3>Projet 4</h3>
+        <p>Un projet Web & Crypto.</p>
+      </div>
+    </div>
+    <br><br><br>
+  </section>
+
+  </section>
+
+
+
+
+  <section id="contact" class="section contact">
+    <h2><br><br>Contacts<br></h2>
+    <div class="contact-links">
+
+
+      <a href="mailto:salomerabec@aliceadsl.fr">
+        <img src="mail.svg" alt="Email" id="mail">
+      </a>
+      <a href="https://www.linkedin.com/in/salomerabec/" target="_blank">
+        <img src="link.svg" alt="lien LinkedIn" id="link">
+      </a>
+      <a href="https://github.com/salomerabec" target="_blank">
+        <img src="git.svg" alt="Lien GitHub" id="git">
+      </a>
+
+    </div>
+    <br><br><br>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Salomé RABEC | Fait main, avec passion et curiosité 🌱 | Tous droits réservés
+  </footer>
 
 
 
 
 
+  <script src="script.js"></script>
 
-
-
-    <section id="contact" class="section contact">
-        <h2><br><br>Contacts<br></h2>
-        <div class="contact-links">
-
-
-            <a href="mailto:salomerabec@aliceadsl.fr">
-                <img src="mail.svg"  alt="Email" id="mail">
-            </a>
-            <a href="https://www.linkedin.com/in/salomerabec/" target="_blank">
-                <img src="link.svg"  alt="lien LinkedIn" id="link">
-            </a>
-            <a href="https://github.com/salomerabec" target="_blank">
-                <img src="git.svg" alt="Lien GitHub" id="git">
-              </a>
-
-        </div>
-        <br><br><br>
-    </section>
-
-    <footer>
-        &copy; <span id="year"></span> Salomé RABEC | Fait main, avec passion et curiosité 🌱 | Tous droits réservés
-    </footer>
-
-
-
-
-
-    <script src="script.js"></script>
-
-<script src="nav.js">    </script>
+  <script src="nav.js">    </script>
 
 
 </body>

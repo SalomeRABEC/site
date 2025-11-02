@@ -1,467 +1,281 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salomé RABEC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-
-
-<script>
-(function() {
-  const isNuit = localStorage.getItem('modeNuit') === 'true';
-
-  if (isNuit) {
-    document.documentElement.classList.add('nuit');
-    document.body?.classList?.add('nuit');
-  }
-
-  // ✅ Petit style temporaire (juste pendant le chargement)
-  const style = document.createElement('style');
-  style.innerHTML = `
-    html, body {
-      background-color: ${isNuit ? '#000d2b' : '#fff'} !important;
-      color: ${isNuit ? 'white' : 'black'} !important;
-      transition: none !important; /* pas d’animation au chargement */
-    }
-  `;
-  document.head.appendChild(style);
-
-  // Supprime le style temporaire une fois que tout est chargé
-  window.addEventListener('DOMContentLoaded', () => style.remove());
-})();
-
-window.addEventListener('load', () => {
-  document.activeElement.blur(); // enlève tout focus initial
-});
-
-</script>
-
-
-
-
-
-    <link rel="stylesheet" href="style.css">
-
-
-
-
-    
-<style>
-
-body.nuit {
-  background-color: #000d2b;
-  color: white;
-}
-
-
-.profil {
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    position: relative;
-    height:95vh
-}
-
-
-.profil.nuit {
-    background-color: #000d2b;
-    color: white;
-}
-
-
-.profil-text {
-    text-align: left;
-    margin-right: 30vw;
-    padding-right: 10vh;
-}
-
-h1 {
-    font-size: 4vh;
-}
-
-
-#bin {
-    z-index: 1;
-    width: 40vw;
-    height:80vh;
-    border-radius: 10px;
-    position: absolute;
-    top: 0; 
-    right: 10vw; 
-}
-#profil-img {
-    z-index: 2;
-    width: 35vw;
-    height: auto;
-    border-radius: 10px;
-    position: absolute;
-    right: 10vw; 
-    opacity: 0;
-    animation: slideDown 1s ease-out forwards;
-}
-
-
-@keyframes slideDown {
-    0% {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
-
-
-
-.cv-button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #9ed697;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.cv-button:hover {
-    background-color: #5f815a;
-}
-
-.cv-button.nuit {
-    background-color: #273672;
-    color: white;
-
-}
-.cv-button.nuit:hover {
-    background-color: #6171bb;
-}
-
-
-
-
-/* Style du champ de recherche et du menu déroulant */
-#searchBar, #filterTags {
-width: 100%;
-max-width: 300px;
-padding: 10px;
-margin: 10px;
-font-size: 16px;
-border: 1px solid #ccc;
-border-radius: 5px;
-}
-
-/* Style de la grille des projets */
-.grid {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-margin-top: 20px;
-}
-
-/* Style des projets */
-.project {
-width: 200px;
-height: 150px;
-background-color: rgb(255, 255, 255);
-border: 1px solid #ddd;
-border-radius: 10px;
-padding: 15px;
-text-align: center;
-transition: transform 0.3s;
-}
-
-
-.project.nuit {
-    background-color: #000e2c;
-    border: 1px solid #ddd;
-    }
-
-h3 {
-    margin-bottom: 4vh; /* Ajuste cette valeur pour avoir plus ou moins d'espace sous le titre */
-}
-
-
-
-.projets.nuit{
-background-color: #000d2b;
-color: #ffffff;
-
-}
-
-.project:hover {
-transform: scale(1.05);
-}
-
-.projets.nuit h2 {
-color: #ffffff;
-}
-
-
-
-.amenagements {
-   
-  max-width: 900px;          /* largeur maximale du texte */
-  margin: 80px auto;         /* espace autour et centrage horizontal */
-  padding: 40px 30px;        /* espace intérieur (haut/bas + côtés) */
-  text-align: justify;        /* centre tout le texte */
-  line-height: 1.8;          /* espace entre les lignes */
-  font-size: 1.1em;          /* taille du texte agréable */
- /* color: #333;               /* couleur douce pour la lecture */
-/*  background-color: #fafafa; /* optionnel : fond léger pour détacher la section */
-  border-radius: 12px;       /* coins arrondis pour un effet doux */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* légère ombre */
-  border: 1px solid #ddd;
-border-radius: 10px;
-padding: 15px;
- margin-top: 15vh;
-}
-
-/* Titre */
-.amenagements h2 {
-  margin-bottom: 25px;       /* espace entre le titre et le texte */
-  font-size: 2em;
-  /*color: #2c2c2c;*/
-    text-align: center;  
-}
-
-
-/* Paragraphe */
-.amenagements p {
-  margin: 0;    
-  text-indent: 3em;             /* retire les marges par défaut */
-}
-
-
-
-button:focus {
-  outline: none;
-}
-
-
-
-</style>
-
-</head>
-
-<body>
-
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aménagements</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="nuit.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="amenagements.css" />
+
+  </head>
+
+  <body>
     <div id="loader">
-        <div class="spinner"></div> 
+      <div class="spinner"></div>
     </div>
 
-
-
-
     <nav>
-        <a href="index.html">Mon parcours</a>
+      <a href="index.html">Mon parcours</a>
 
-  <div class="dropdown">
-    <button class="dropbtn"
-            id="btn-projets"
-            aria-haspopup="true"
-            aria-controls="menu-projets"
-            aria-expanded="false">
-      Projets ▾
-    </button>
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          id="btn-projets"
+          aria-haspopup="true"
+          aria-controls="menu-projets"
+          aria-expanded="false"
+        >
+          Projets ▾
+        </button>
 
-    <ul class="dropdown-content" id="menu-projets" hidden>
-      <li><a href="accessibilite.html">Accessibilité du site</a></li>
-    </ul>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn"
-            id="btn-passions"
-            type="button"
-            aria-haspopup="true"
-            aria-controls="menu-passions"
-            aria-expanded="false"
-            >
-            
-      Passions ▾
-    </button>
+        <ul class="dropdown-content" id="menu-projets" hidden>
+          <li><a href="accessibilite.html">Accessibilité du site</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          id="btn-passions"
+          type="button"
+          aria-haspopup="true"
+          aria-controls="menu-passions"
+          aria-expanded="false"
+        >
+          Passions ▾
+        </button>
 
-    <ul class="dropdown-content" id="menu-passions" hidden>
-      <li><a href="patisserie.html">Pâtisserie</a></li>
-      <li><a href="jardin.html">Jardinage</a></li>
-    </ul>
-  </div>
-          <a href="amenagements.html">Aménagements</a>
+        <ul class="dropdown-content" id="menu-passions" hidden>
+          <li><a href="patisserie.html">Pâtisserie</a></li>
+          <li><a href="jardin.html">Jardinage</a></li>
+        </ul>
+      </div>
+      <a href="amenagements.html">Aménagements</a>
 
-                  <a href="contact.html">Contacts</a>
+      <a href="contact.html">Contacts</a>
     </nav>
 
+    <section id="lune" class="section lune">
+      <button id="modeNuitButton">
+        <img src="moon.svg" alt="Bouton mode nuit" id="luneIcon" />
+      </button>
+    </section>
 
-     
-<section id="lune" class="section lune">
-    <button id="modeNuitButton">
-        <img src="moon.svg"  alt="Bouton mode nuit" id="luneIcon">
-    </button>
-</section>
-
-
-
-
-
-
-<section class="amenagements">
-
+    <section class="amenagements">
       <h2>Aménagements</h2>
-  <p>
+      <p>
+        Voici les <strong>aménagements</strong> dont j'ai besoin pour travailler
+        au maximum de mes capacités du fait d'être en situation de handicap et
+        bénéficiant d'une RQTH. J’ai une bonne connaissance de mes forces et de
+        mes préférences, ainsi que des éléments qui peuvent me poser problème.
+        ⚠️
+      </p>
 
-Voici les <strong>aménagements</strong> dont j'ai besoin pour travailler au maximum de mes capacités du fait d'être en situation de handicap et bénéficiant d'une RQTH.
+      <br />
+      <p>
+        Je pense que les aménagements raisonnables suivants m’aideront à donner
+        le meilleur de moi-même 🌟 et à bien remplir mes fonctions :
+      </p>
+      <br />
+      <h3>🏠 Conditions de travail</h3>
+      <ul>
+        <li>
+          Me permettre de <strong>travailler à domicile</strong>, autant que
+          possible, afin de maximiser mes performances tout en réduisant les
+          distractions, le stress et la fatigue
+        </li>
+      </ul>
 
- J’ai une bonne connaissance de mes forces et de mes préférences, ainsi que des éléments qui peuvent me poser problème. ⚠️
-  </p>
- 
-<br>
-   <p>
+      📌 Si ce n'est pas possible :
 
-Je pense que les aménagements raisonnables suivants m’aideront à donner le meilleur de moi-même 🌟 et à bien remplir mes fonctions :
+      <ul>
+        <li>
+          Permettre un espace de travail <strong>calme et fixe</strong> au lieu
+          d'un bureau ouvert très fréquenté, afin d'éviter une surcharge
+          sensorielle 🧘‍♀️
+        </li>
+        <li>
+          Utiliser un <strong>filtre</strong> pour écran d'ordinateur portable,
+          de bureau ou de tablette, pour rendre l'écran moins lumineux 💻✨ et
+          minimiser le risque de surcharge sensorielle
+        </li>
+        <li>
+          Autorisation de porter un <strong>casque anti-bruit</strong> 🎧
+          pendant le temps de travail, afin de bloquer les bruits de fond dans
+          un environnement animé (prix moyen : 300€ ; il existe des aides
+          financières par l'<a
+            href="https://entreprendre.service-public.gouv.fr/vosdroits/F15204"
+            role="button"
+            tabindex="0"
+            >AGEFIPH</a
+          >
+          (pour le secteur privé), le
+          <a
+            href="https://www.fiphfp.fr/employeurs/nos-services/les-aides-financieres-ponctuelles"
+            role="button"
+            tabindex="0"
+            >FIPHP</a
+          >
+          (pour le secteur public), la MDPH (Maison Départementale des Personnes
+          Handicapées). Il est possible que j’apporte mon propre matériel en cas
+          d’accord écrit de l’entreprise et d’assurance)
+        </li>
+        <li>
+          Ne pas avoir de <strong>lumières vives</strong>, vacillantes 💡 ou
+          bruyantes à proximité de mon lieu de travail. Une lampe de bureau
+          convient
+        </li>
+        <li>
+          Me donner accès à une <strong>pièce calme</strong> ou à un espace
+          extérieur abrité 🌿, pour m'aider à me calmer lorsque je me sens
+          submergée
+        </li>
+      </ul>
 
-</p>
-<br>
-<h3>🏠 Conditions de travail</h3>
- <ul>
-    <li> Me permettre de <strong>travailler à domicile</strong>, autant que possible, afin de maximiser mes performances tout en réduisant les distractions, le stress et la fatigue</li>
-  </ul>
-     
+      <br />
 
-📌 Si ce n'est pas possible :        
+      <h3>👩‍💼 Encadrement et communication</h3>
 
-     <ul>
-    <li>Permettre un espace de travail <strong>calme et fixe</strong> au lieu d'un bureau ouvert très fréquenté, afin d'éviter une surcharge sensorielle 🧘‍♀️</li>
-    <li>Utiliser un <strong>filtre</strong> pour écran d'ordinateur portable, de bureau ou de tablette, pour rendre l'écran moins lumineux 💻✨ et minimiser le risque de surcharge sensorielle</li>
-    <li>Autorisation de porter un <strong>casque anti-bruit</strong> 🎧 pendant le temps de travail, afin de bloquer les bruits de fond dans un environnement animé 
-    (prix moyen : 300€ ; il existe des aides financières par l'<a href="https://entreprendre.service-public.gouv.fr/vosdroits/F15204" role="button"  tabindex="0">AGEFIPH</a>  (pour le secteur privé), le <a href="https://www.fiphfp.fr/employeurs/nos-services/les-aides-financieres-ponctuelles" role="button"  tabindex="0">FIPHP</a> (pour le secteur public), la MDPH (Maison Départementale des Personnes Handicapées). Il est possible que j’apporte mon propre matériel en cas d’accord écrit de l’entreprise et d’assurance)   </li>     
-    <li>Ne pas avoir de <strong>lumières vives</strong>, vacillantes 💡 ou bruyantes à proximité de mon lieu de travail. Une lampe de bureau convient</li>
-    <li>Me donner accès à une <strong>pièce calme</strong> ou à un espace extérieur abrité 🌿, pour m'aider à me calmer lorsque je me sens submergée</li>
-  </ul>
-              
+      <br />
+      📌 J'ai besoin que mon <strong>manager</strong> ait en tête de :
 
+      <ul>
+        <li>
+          Fournir une vision claire des <strong>priorités</strong> de travail et
+          de leurs délais 🗓️
+        </li>
+        <li>
+          Recevoir des instructions <strong>claires et concises</strong> sur la
+          manière d'effectuer une tâche, du début à la fin 📝,
+          <strong>par écrit</strong> ou visuelles plutôt que verbalement ou par
+          téléphone 💬➡️📄
+        </li>
+        <li>
+          Des horaires de travail permettant de
+          <strong>me déplacer hors des heures de pointe</strong> afin de ne pas
+          arriver déjà fatiguée au travail
+        </li>
+        <li>Recevoir à <strong>l'avance</strong> les jours des réunions 📅</li>
+        <li>
+          Permission de <strong>ne pas</strong> participer à des activités
+          <strong>sociales intenses</strong> (team-building, repas de fin
+          d’année…) 🎉
+        </li>
+        <li>
+          <strong>Limiter</strong> le travail en <strong>équipe</strong>, avoir
+          des mises en commun régulières plutôt qu’être en permanence en groupe
+        </li>
+        <li>
+          Avoir un tuteur ou un <strong>supérieur nommé</strong> à qui je peux
+          poser mes questions ou vers qui me tourner
+        </li>
+      </ul>
 
-<br>
- 
-<h3>👩‍💼 Encadrement et communication</h3>
+      <br />
 
-<br>
-📌 J'ai besoin que mon <strong>manager</strong> ait en tête de :
-
-         <ul>
-    <li>Fournir une vision claire des <strong>priorités</strong> de travail et de leurs délais 🗓️</li> 
-    <li>Recevoir des instructions <strong>claires et concises</strong> sur la manière d'effectuer une tâche, du début à la fin 📝, <strong>par écrit</strong> ou visuelles plutôt que verbalement ou par téléphone 💬➡️📄</li> 
-    <li>Des horaires de travail permettant de <strong>me déplacer hors des heures de pointe</strong> afin de ne pas arriver déjà fatiguée au travail</li> 
-    <li>Recevoir à <strong>l'avance</strong> les jours des réunions 📅</li> 
-    <li>Permission de <strong>ne pas</strong> participer à des activités <strong>sociales intenses</strong> (team-building, repas de fin d’année…) 🎉</li> 
-   <li> <strong>Limiter</strong> le travail en <strong>équipe</strong>, avoir des mises en commun régulières plutôt qu’être en permanence en groupe</li> 
-  <li> Avoir un tuteur ou un <strong>supérieur nommé</strong> à qui je peux poser mes questions ou vers qui me tourner      </li>   
-  </ul>
-
-
-<br>
- 
-<p>
-    Je mets à disposition cette liste en tant que personne en situation de handicap ♿, en vertu de la <strong>loi n° 2005-102 du 11 février 2005 pour l’égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées</strong>. Je serais heureuse de discuter de cette demande plus en détail.
-</p>
-
-</section>
+      <p>
+        Je mets à disposition cette liste en tant que personne en situation de
+        handicap ♿, en vertu de la
+        <strong
+          >loi n° 2005-102 du 11 février 2005 pour l’égalité des droits et des
+          chances, la participation et la citoyenneté des personnes
+          handicapées</strong
+        >. Je serais heureuse de discuter de cette demande plus en détail.
+      </p>
+    </section>
 
     <section id="projets" class="section projets">
+      <h2>
+        <br /><br />
+        Mes Projets
+        <br /><br />
+      </h2>
 
-                    <h2><br><br>
-                Mes Projets
-            <br><br></h2>
-    
-            
-            <!-- Barre de recherche -->
-            <input type="text" id="searchBar" placeholder="Rechercher un projet..." />
-        
-            <!-- Menu déroulant pour filtrer par tags -->
-            <select id="filterTags" aria-label="Filtrer par catégorie">
-                <option value="all">Tous</option>
-                <option value="web">Web</option>
-                <option value="crypto">Cryptographie</option>
-                <option value="ia">Intelligence Artificielle</option>
-            </select>
-        
-            <!-- Grille des projets -->
-            <div id="projectsGrid" class="grid">
-              <a href="accessibilite.html" class="project" data-tags="web" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+      <!-- Barre de recherche -->
+      <input type="text" id="searchBar" placeholder="Rechercher un projet..." />
 
-                    <h3>Accessibilité du site</h3>
-                    <p>Un projet Web basé sur le RGAA ♿</p>
+      <!-- Menu déroulant pour filtrer par tags -->
+      <select id="filterTags" aria-label="Filtrer par catégorie">
+        <option value="all">Tous</option>
+        <option value="web">Web</option>
+        <option value="crypto">Cryptographie</option>
+        <option value="ia">Intelligence Artificielle</option>
+      </select>
 
-                    </a>
-                <div class="project" data-tags="crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 2</h3>
-                    <p>Un projet sur la cryptographie.</p>
-                </div>
-                <div class="project" data-tags="ia" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 3</h3>
-                    <p>Un projet basé sur l'IA.</p>
-                </div>
-                <div class="project" data-tags="web crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 4</h3>
-                    <p>Un projet Web & Crypto.</p>
-                </div>
-            </div>
-            <br><br><br>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <!-- Grille des projets -->
+      <div id="projectsGrid" class="grid">
+        <a
+          href="accessibilite.html"
+          class="project"
+          data-tags="web"
+          role="button"
+          tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
+        >
+          <h3>Accessibilité du site</h3>
+          <p>Un projet Web basé sur le RGAA ♿</p>
+        </a>
+        <div
+          class="project"
+          data-tags="crypto"
+          role="button"
+          tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
+        >
+          <h3>Projet 2</h3>
+          <p>Un projet sur la cryptographie.</p>
+        </div>
+        <div
+          class="project"
+          data-tags="ia"
+          role="button"
+          tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
+        >
+          <h3>Projet 3</h3>
+          <p>Un projet basé sur l'IA.</p>
+        </div>
+        <div
+          class="project"
+          data-tags="web crypto"
+          role="button"
+          tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
+        >
+          <h3>Projet 4</h3>
+          <p>Un projet Web & Crypto.</p>
+        </div>
+      </div>
+      <br /><br /><br />
+    </section>
 
     <section id="contact" class="section contact">
-        <h2><br><br>Contacts<br></h2>
-        <div class="contact-links">
-
-
-            <a href="mailto:salomerabec@aliceadsl.fr">
-                <img src="mail.svg"  alt="Email" id="mail">
-            </a>
-            <a href="https://www.linkedin.com/in/salomerabec/" target="_blank">
-                <img src="link.svg"  alt="lien LinkedIn" id="link">
-            </a>
-            <a href="https://github.com/salomerabec" target="_blank">
-                <img src="git.svg" alt="Lien GitHub" id="git">
-              </a>
-
-        </div>
-        <br><br><br>
+      <h2><br /><br />Contacts<br /></h2>
+      <div class="contact-links">
+        <a href="mailto:salomerabec@aliceadsl.fr">
+          <img src="mail.svg" alt="Email" id="mail" />
+        </a>
+        <a href="https://www.linkedin.com/in/salomerabec/" target="_blank">
+          <img src="link.svg" alt="lien LinkedIn" id="link" />
+        </a>
+        <a href="https://github.com/salomerabec" target="_blank">
+          <img src="git.svg" alt="Lien GitHub" id="git" />
+        </a>
+      </div>
+      <br /><br /><br />
     </section>
 
     <footer>
-        &copy; <span id="year"></span> Salomé RABEC | Fait main, avec passion et curiosité 🌱 | Tous droits réservés
+      &copy; <span id="year"></span> Salomé RABEC | Fait main, avec passion et
+      curiosité 🌱 | Tous droits réservés
     </footer>
 
-
-
-
-
     <script src="script.js"></script>
-    <script src="nav.js">    </script>
-
-</body>
-
+    <script src="nav.js"></script>
+  </body>
 </html>
