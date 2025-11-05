@@ -36,7 +36,7 @@
 
     <ul class="dropdown-content" id="menu-projets" hidden>
       <li><a href="accessibilite.html">Accessibilité du site</a></li>
-                      <li><a href="jishotoanki.html">Jisho to Anki</a></li>
+       <li><a href="jishotoanki.html">Jisho to Anki</a></li>
     </ul>
   </div>
   <div class="dropdown">
@@ -184,7 +184,9 @@ Pour les éléments iframe, j'ai ajouté un élément title="" car le alt ne peu
                 <option value="ia">Intelligence Artificielle</option>
             </select>
         
-            <!-- Grille des projets -->      <a href="jishotoanki.html" class="project" data-tags="web" role="button" tabindex="0"
+            <!-- Grille des projets -->
+                   <div id="projectsGrid" class="grid">
+<a href="jishotoanki.html" class="project" data-tags="web" role="button" tabindex="0"
         onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
 
         <h3>Jisho to Anki</h3>
