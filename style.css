@@ -195,7 +195,9 @@ nav button.dropbtn {
 
 .projets {
   background-color: #9ed697;
+  flex-grow: 1;
 }
+
 
 .project {
   display: block; /* rend le lien cliquable sur tout le bloc */
@@ -301,6 +303,10 @@ footer {
   padding: 10px;
 }
 
+nav, footer {
+    flex-shrink: 0;
+}
+
 /*CSS GÉNÉRALE POUR TOUTES LES PAGES*/
 
 /*LIGHTBOX*/
@@ -348,3 +354,5 @@ footer {
 .lightbox.show {
   display: flex;
 }
+
+

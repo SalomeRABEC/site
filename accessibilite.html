@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salomé RABEC</title>
+    <title>Accessibilité</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
 <script src="nuit.js"></script>
@@ -36,6 +36,7 @@
 
     <ul class="dropdown-content" id="menu-projets" hidden>
       <li><a href="accessibilite.html">Accessibilité du site</a></li>
+                      <li><a href="jishotoanki.html">Jisho to Anki</a></li>
     </ul>
   </div>
   <div class="dropdown">
@@ -183,12 +184,13 @@ Pour les éléments iframe, j'ai ajouté un élément title="" car le alt ne peu
                 <option value="ia">Intelligence Artificielle</option>
             </select>
         
-            <!-- Grille des projets -->
-            <div id="projectsGrid" class="grid">
-                <div class="project" data-tags="web" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-                    <h3>Projet 1</h3>
-                    <p>Un projet Web intéressant.</p>
-                </div>
+            <!-- Grille des projets -->      <a href="jishotoanki.html" class="project" data-tags="web" role="button" tabindex="0"
+        onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+
+        <h3>Jisho to Anki</h3>
+        <p>Une extension Firefox de dictionnaire 🇯🇵</p>
+
+      </a>
                 <div class="project" data-tags="crypto" role="button"  tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
                     <h3>Projet 2</h3>
                     <p>Un projet sur la cryptographie.</p>
@@ -206,20 +208,6 @@ Pour les éléments iframe, j'ai ajouté un élément title="" car le alt ne peu
         </section>
         
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <section id="contact" class="section contact">
