@@ -8,12 +8,18 @@ h3 {
 
 /* IMAGES LANGAGES UTILISÉS*/
 .lang {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap:nowrap;
   gap: 10px;
   justify-items: center;
 }
+
+@media (max-width: 1000px) {
+  .lang {
+    flex-direction: column;
+  }
+}
+
 
 .lang img {
   height: 8vh;

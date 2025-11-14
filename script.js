@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   // --- RÉCUPÉRATION DES ÉLÉMENTS ---
   const body = document.body;
   const modeNuitButton = document.getElementById("modeNuitButton");
@@ -13,15 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Tous les éléments susceptibles d’avoir un style nuit
   const elements = [
-    ...document.querySelectorAll(".section, .project, .cv-button, .contact-form, .form-group button"),
+    ...document.querySelectorAll(
+      ".section, .project, .cv-button, .contact-form, .form-group button"
+    ),
     document.querySelector(".additional-content"),
   ].filter(Boolean); // retire les null éventuels
 
-  if (localStorage.getItem('modeNuit') === 'true') {
-    document.documentElement.classList.add('nuit');
-}
-
-
+  if (localStorage.getItem("modeNuit") === "true") {
+    document.documentElement.classList.add("nuit");
+  }
 
   // --- FONCTIONS UTILES ---
 
@@ -29,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function appliquerModeNuit(actif) {
     if (actif) {
       body.classList.add("nuit");
-      elements.forEach(el => el.classList.add("nuit"));
+      elements.forEach((el) => el.classList.add("nuit"));
     } else {
       body.classList.remove("nuit");
-      elements.forEach(el => el.classList.remove("nuit"));
+      elements.forEach((el) => el.classList.remove("nuit"));
     }
 
     // Spécifique à certaines pages (ex: jardin, patisserie, etc.)
@@ -51,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Sauvegarder l’état
     localStorage.setItem("modeNuit", actif.toString());
+
+    // Forcer le curseur à suivre le thème
+    document.querySelectorAll(".cursor").forEach((c) => {
+      c.style.backgroundColor = "";
+      c.style.outline = "";
+    });
   }
 
   // --- INITIALISATION ---

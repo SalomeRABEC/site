@@ -128,25 +128,34 @@ h1 {
 }
 
 /*Lettrine*/
-.description p::first-letter {
+.description p:first-child::first-letter {
   font-size: 6vh;
   float: left;
   line-height: 1;
   margin-right: 0.1em;
 }
 
-/*texte indenté de plus en plus à chauqe ligne*/
-.description span:nth-child(0) {
-  margin-left: 0em;
+.exemple p:first-child::first-letter {
+  font-size: 6vh;
+  line-height: 1;
+  margin-right: 0.1em;
 }
-.description span:nth-child(2) {
-  margin-left: 2em;
+
+.exemple p {
+  font-family: "Courier New", Courier, monospace;
 }
-.description span:nth-child(3) {
-  margin-left: 8em;
+
+.typewriter p:nth-child(1) {
+  margin-left: 1rem;
 }
-.description span:nth-child(4) {
-  margin-left: 12em;
+.typewriter p:nth-child(2) {
+  margin-left: 4rem;
+}
+.typewriter p:nth-child(3) {
+  margin-left: 8rem;
+}
+.typewriter p:nth-child(4) {
+  margin-left: 12rem;
 }
 
 .valeurs {
@@ -209,4 +218,49 @@ section.connaissances h2 {
 .grid-connaissances2 figcaption {
   margin-top: 8px;
   text-align: center;
+}
+
+/*CURSEUR */
+
+.typewriter {
+  width: 100%; /* occupe tout l’espace disponible */
+  overflow-wrap: break-word; /* coupe les mots trop longs */
+  word-wrap: break-word; /* compatibilité avec anciens navigateurs */
+  box-sizing: border-box; /* inclut le padding dans la largeur */
+  white-space: normal; /* permet le retour à la ligne automatique */
+  line-height: 1.4;
+}
+
+.typewriter p {
+  margin: 0;
+  font-size: 2.5vh;
+  visibility: hidden; /* caché au départ */
+}
+
+.cursor {
+  display: inline;
+  width: 5px !important;
+  height: 2rem !important;
+  margin-left: 3px;
+  animation: blink 0.7s steps(1) infinite;
+  visibility: visible !important;
+  background-color: var(--cursor-bg);
+  outline: 2px solid var(--cursor-outline);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+:root {
+  --cursor-bg: white;
+  --cursor-outline: black;
+}
+
+html.nuit,
+body.nuit {
+  --cursor-bg: black;
+  --cursor-outline: white;
 }
