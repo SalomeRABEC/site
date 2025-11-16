@@ -10,9 +10,10 @@
     />
 
     <script src="nuit.js"></script>
-
+    <script src="lazyload.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="article.css" />
+
   </head>
 
   <body>
@@ -81,7 +82,18 @@
         </p>
       </div>
 
+
+      
+
+
       <div class="photos">
+
+        <img src="./patisserie/1bis.png" data-src="./patisserie/1.jpg" class="blur" alt="Description"
+        onclick="openLightbox(this)"
+          role="button"
+          tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
+
         <img
           src="./patisserie/1.jpg"
           alt="Photo d'une Tarte aux fraises"

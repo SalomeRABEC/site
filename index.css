@@ -180,6 +180,10 @@ section.connaissances h2 {
   margin-top: 100px;
 }
 
+
+
+
+
 /* Supprime le margin par défaut des iframes */
 .grid-connaissances iframe,
 .grid-connaissances2 iframe {
@@ -193,6 +197,8 @@ section.connaissances h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
 }
+
+
 
 .grid-connaissances,
 .grid-connaissances2 {

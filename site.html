@@ -104,7 +104,7 @@ d'apprendre le HTML et CSS à partir de zéro, et de reprendre le javascript en 
 
 <h3>📌 L'accessibilité via le focus</h3>
 
-<p>J'ai mis de longues heures à faire en sorte que le focus puisse accéder à toutes les catégories du menu, y compris celles dans le menu déroulant. J'ai dû ajouter
+<p>J'ai mis de longues heures à faire en sorte que le focus puisse accéder à toutes les catégories du menu, y compris celles dans les menus déroulants (dropdown). J'ai dû ajouter
   des "button" un peu partout. Je pense que faire en sorte de construire le menu en ayant dès le début conscience que le focus doit être utilisable permet de ne 
   pas faire fausse route trop longtemps, en n'ajoutant pas d'éléments qui vont être incompatibles.
 </p>
@@ -120,7 +120,7 @@ d'apprendre le HTML et CSS à partir de zéro, et de reprendre le javascript en 
 <br>
 <p>Pour illustrer mon site j'ai utilisé à plusieurs reprise l'IA de génération d'image de OpenAI. J'ai choisi une image exemple à montrer à l'IA pour lui montrer 
   dans quel angle je voulais que l'image soit dessinée, quelles couleurs utiliser, j'ai ajouté au prompt des détails que je voulais absolument. </p>
-  <p>J'ai ensuite utilisé le logiciel GIMP pour retoucher l'image, supprimer le fond pour mettre un fond transparent, et faire des bords bien clairs pour que le dessin
+  <p>J'ai ensuite utilisé le logiciel GIMP pour retoucher l'image, supprimer le fond pour mettre un fond transparent, changer quelques couleurs, et faire des bords bien clairs pour que le dessin
   soit esthétique même sur fond noir (mode nuit).
 </p>
 
@@ -203,7 +203,7 @@ d'apprendre le HTML et CSS à partir de zéro, et de reprendre le javascript en 
 
 
 <p>J'ai commencé par définir les tailles et emplacements des éléments en utilisant des nombres de pixels : mais une fois que la taille de la fenêtre change, tout est
-  à refaire. J'ai donc principalement utilisé les vh et vw pour être sûre que la taille des éléments soit adaptée à la taille de la fenêtre, peu importe sa forme.</p>
+  à refaire. J'ai donc principalement utilisé les vh et vw pour être sûre que la taille des éléments soit adaptée à la taille de la fenêtre, peu importe sa forme. J'ai aussi testé le site avec tous les navigateurs et toutes les tailles de fenêtres possible, ainsi que sur plusieurs téléphones.</p>
   
   <p>J'ai utilisé flex-wrap et @media dans mon CSS pour changer la façon dont les éléments s'alignent (de horizontalement à verticalement) pour lorsque l'utilisateur est sur téléphone.
 </p>
@@ -224,10 +224,15 @@ façon, j'ai pu utiliser le même fichier CSS ou JS pour toutes les pages et ain
 <h2>Ce que je ferais différemment</h2>
 
 <p>Si c'était à refaire, ayant maintenant de l'expérience, je commencerais dès le début à organiser mon code et à le penser pour pouvoir réutiliser les fichiers CSS
-  et JS, en optimisant le nombre de lignes de code au maximum. </p>
+  et JS, en optimisant le nombre de lignes de code au maximum. Je coderais tout en ayant dès le début à l'esprit que cela doit rester esthétique peu importe la taille ou le ratio de la fenêtre.</p>
   
   <p>Je me renseignerais sur l'hébergement, les sites dynamiques, les langages AVANT de commencer à imaginer le site, pour commencer dès le début avec une bonne architecture.
  </p>
+
+   <section class="date">
+Rédigé le 14 novembre 2025
+   </section>
+
 
   </section>
 
