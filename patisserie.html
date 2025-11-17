@@ -9,10 +9,25 @@
       rel="stylesheet"
     />
 
-    <script src="nuit.js"></script>
-    <script src="lazyload.js"></script>
+    <link rel="preload" as="image" href="patisserie/1.jpg">
+    <link rel="preload" as="image" href="patisserie/2.jpg">
+    <link rel="preload" as="image" href="patisserie/3.jpg">
+    <link rel="preload" as="image" href="patisserie/4.jpg">
+        <link rel="preload" as="image" href="patisserie/5.jpg">
+            <link rel="preload" as="image" href="patisserie/6.png">
+                <link rel="preload" as="image" href="patisserie/7.png">
+                    <link rel="preload" as="image" href="patisserie/8.jpg">
+                        <link rel="preload" as="image" href="patisserie/9.jpg">
+
+
+
+
+    <script src="nuit.js" ></script>
+
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="article.css" />
+
 
   </head>
 
@@ -83,17 +98,7 @@
       </div>
 
 
-      
-
-
       <div class="photos">
-
-        <img src="./patisserie/1bis.png" data-src="./patisserie/1.jpg" class="blur" alt="Description"
-        onclick="openLightbox(this)"
-          role="button"
-          tabindex="0"
-          onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)">
-
         <img
           src="./patisserie/1.jpg"
           alt="Photo d'une Tarte aux fraises"
@@ -101,7 +106,9 @@
           role="button"
           tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
+          
         />
+
         <img
           src="./patisserie/2.jpg"
           alt="Photo d'une Tarte à la rhubarbe"
@@ -118,6 +125,7 @@
           tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
         />
+
         <img
           src="./patisserie/4.jpg"
           alt="Photo d'un gâteau de Noël italien"
@@ -126,6 +134,7 @@
           tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
         />
+
         <img
           src="./patisserie/5.jpg"
           alt="Photo d'un cheesecake décoré de coeurs"
@@ -142,6 +151,7 @@
           tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
         />
+
         <img
           src="./patisserie/8.jpg"
           alt="Photo de biscuits divers"
@@ -150,6 +160,7 @@
           tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
         />
+
         <img
           src="./patisserie/9.jpg"
           alt="Photo d'une tarte à la mûre"
@@ -158,6 +169,7 @@
           tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(this)"
         />
+
         <img
           src="./patisserie/6.png"
           alt="Photo de pots de confiture de mûre"
@@ -279,5 +291,8 @@
     <script src="script.js"></script>
     <script src="lightbox.js"></script>
     <script src="nav.js"></script>
+
   </body>
+
+
 </html>
